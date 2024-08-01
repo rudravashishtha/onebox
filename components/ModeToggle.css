@@ -1,0 +1,75 @@
+:root {
+    --background-light: #E9EAEC;
+    --background-light-secondary: #f2f2f2;
+    --text-light-default: #E9EAEC;
+    --text-light-body: #444;
+    --text-light-secondary: #888;
+    --border-light: #DADEE1;
+  
+    --background-dark: #222426;
+    --background-dark-secondary: #222426;
+    --text-dark-default: #222426;
+    --text-dark-body: rgba(255, 255, 255, 0.9);
+    --text-dark-secondary: rgba(255, 255, 255, 0.5);
+    --border-dark: #343A40;
+  
+    --background: var(--background-light);
+    --background-secondary: var(--background-light-secondary);
+    --text-default: var(--text-light-default);
+    --text-body: var(--text-light-body);
+    --text-secondary: var(--text-light-secondary);
+    --toggle-background: var(--text-light-default);
+    --toggle-icon-background: var(--background-light);
+    --toggle-border: var(--border-light);
+  }
+  
+  body.dark-theme {
+    --background: var(--background-dark);
+    --background-secondary: var(--background-dark-secondary);
+    --text-default: var(--text-dark-default);
+    --text-body: var(--text-dark-body);
+    --text-secondary: var(--text-dark-secondary);
+    --toggle-background: var(--text-dark-default);
+    --toggle-icon-background: var(--background-dark);
+    --toggle-border: var(--border-dark);
+  }
+  
+  .ThemeToggle {
+    appearance: none;
+    width: 62px;
+    height: 32px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10px;
+    align-items: center;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    outline: none;
+    border: 2px solid var(--toggle-border);
+    cursor: pointer;
+    transition: background-color ease 0.3s, border-color ease 0.3s;
+    background: var(--toggle-background);
+  }
+  
+  .ThemeToggle::before {
+    content: url("./moon.svg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--toggle-icon-background);
+    transition: transform cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s, content 0.3s;
+    padding-top: 3px;
+    margin-left: 5px;
+  }
+  
+  .ThemeToggle:checked::before {
+    transform: translateX(28px);
+    content: url("./sun.svg");
+    background: var(--toggle-icon-background);
+  }
+  
