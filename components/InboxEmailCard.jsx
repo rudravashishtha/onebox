@@ -9,7 +9,7 @@ const InboxEmailCard = ({
   handleChangeEmail,
 }) => {
 
-  let token = localStorage.getItem("reachinbox-auth");
+  let token = window.localStorage.getItem("reachinbox-auth");
   token = token ? JSON.parse(token) : "";
   const date = new Date(sentAt);
   // Options for formatting

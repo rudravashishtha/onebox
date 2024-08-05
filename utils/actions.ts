@@ -1,6 +1,7 @@
+
 import axios from "axios";
 
-let token = localStorage.getItem("reachinbox-auth");
+let token = window.localStorage.getItem("reachinbox-auth");
 token =  token ? JSON.parse(token) : ""; 
 
 

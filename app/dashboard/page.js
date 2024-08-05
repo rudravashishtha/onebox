@@ -24,7 +24,7 @@ const DashboardPage = (req) => {
 
   const [currentPage, setCurrentPage] = useState(0);
 
-  let token = localStorage.getItem("reachinbox-auth") || takeToken();
+  let token = window.localStorage.getItem("reachinbox-auth") || takeToken();
   token = token ? JSON.parse(token) : "";
 
   const openModal = () => {
@@ -56,16 +56,16 @@ const DashboardPage = (req) => {
     token = req.searchParams.token || takeToken();
     if (token) {
       let ParseData = jwtDecode(token);
-      localStorage.setItem("reachinbox-auth", JSON.stringify(token));
-      localStorage.setItem(
+      window.localStorage.setItem("reachinbox-auth", JSON.stringify(token));
+      window.localStorage.setItem(
         "reachinbox-auth-firstname",
         JSON.stringify(ParseData.user.firstName)
       );
-      localStorage.setItem(
+      window.localStorage.setItem(
         "reachinbox-auth-lastname",
         JSON.stringify(ParseData.user.lastName)
       );
-      localStorage.setItem(
+      window.localStorage.setItem(
         "reachinbox-auth-email",
         JSON.stringify(ParseData.user.email)
       );
@@ -75,7 +75,7 @@ const DashboardPage = (req) => {
 
   function takeToken() {
     try {
-      const token = localStorage.getItem("reachinbox-auth");
+      const token = window.localStorage.getItem("reachinbox-auth");
       return token ? JSON.parse(token) : "";
     } catch (e) {
       console.log("Error:", e);
@@ -119,14 +119,14 @@ const DashboardPage = (req) => {
       .catch((err) => alert("Error Please try again"));
   };
 
-  let firstName = localStorage.getItem("reachinbox-auth-firstname");
+  let firstName = window.localStorage.getItem("reachinbox-auth-firstname");
   firstName = firstName ? JSON.parse(firstName) : "";
-  let lastName = localStorage.getItem("reachinbox-auth-lastname");
+  let lastName = window.localStorage.getItem("reachinbox-auth-lastname");
   lastName = lastName ? JSON.parse(lastName) : "";
   const username = firstName
     ? firstName[0] + (lastName ? lastName[0] : "")
     : "";
-  let userEmail = localStorage.getItem("reachinbox-auth-email");
+  let userEmail = window.localStorage.getItem("reachinbox-auth-email");
   userEmail = userEmail ? JSON.parse(userEmail) : "";
 
   return (

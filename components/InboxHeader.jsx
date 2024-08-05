@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 
 const InboxHeader = () => {
   const router = useRouter();
-  let token = localStorage.getItem("reachinbox-auth");
+  let token = window.localStorage.getItem("reachinbox-auth");
   token = token ? JSON.parse(token) : "";
 
   useEffect(() => {
-    token = localStorage.getItem("reachinbox-auth");
+    token = window.localStorage.getItem("reachinbox-auth");
     token = token ? JSON.parse(token) : "";
   }, []);
 

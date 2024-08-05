@@ -1,14 +1,14 @@
-"use client";
+"use client"
 import AuthNav from '../components/AuthNav';
 import { Button } from "../components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
-  let token = localStorage.getItem("reachinbox-auth") || takeToken();
+  let token = window.localStorage.getItem("reachinbox-auth") || takeToken();
 
   function takeToken() {
     try {
-      const token = localStorage.getItem("reachinbox-auth");
+      const token = window.localStorage.getItem("reachinbox-auth");
       return token ? JSON.parse(token) : "";
     } catch (e) {
       console.log("Error:", e);

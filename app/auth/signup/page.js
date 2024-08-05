@@ -17,7 +17,7 @@ export default function SignupPage() {
             Create a new account
           </h2>
           <Link
-            href={`https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=${process.env.REDIRECT_URI}/dashboard`}
+            href={`https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=/dashboard`}
             className="text-base text-[#CCCCCC] cursor-pointer flex justify-center items-center"
           >
             <Button variant="outline" className="bg-transparent border border-[#707172] px-16 py-8 flex justify-center items-center gap-3">

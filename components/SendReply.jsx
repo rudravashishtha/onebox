@@ -13,12 +13,12 @@ const initalState = {
 
 const SendReply = ({ handleCancel, singleMail }) => {
   const [formData, setFormData] = useState(initalState);
-  let token = localStorage.getItem("reachinbox-auth");
+  let token = window.localStorage.getItem("reachinbox-auth");
   token = token ? JSON.parse(token) : "";
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    token = localStorage.getItem("reachinbox-auth");
+    token = window.localStorage.getItem("reachinbox-auth");
     token = token ? JSON.parse(token) : "";
     console.log("token :-", token);
 
