@@ -52,7 +52,8 @@ const DashboardPage = (req) => {
       .catch((error) => console.error("Error:", error));
   };
   useEffect(() => {
-    token = req.searchParams.token || localStorage.getItem("reachinbox-auth");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    token = req.searchParams.token || takeToken();
     if (token) {
       let ParseData = jwtDecode(token);
       localStorage.setItem("reachinbox-auth", JSON.stringify(token));

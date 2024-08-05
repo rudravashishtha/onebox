@@ -22,7 +22,7 @@ const InboxEmailCard = ({
   return (
     <div
       className="w-full pt-3 pb-3 pl-2"
-      onClick={() => handleChangeEmail(threadId, token)}
+      onClick={() => handleChangeEmail(threadId)}
     >
       <div className="flex gap-1 justify-between text-[12px]">
         <p>{fromEmail}</p>
